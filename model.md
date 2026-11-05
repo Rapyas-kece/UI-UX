@@ -65,6 +65,6 @@
 - [x] Spesifikasi Wireframe 5 Layar & User Flow Figma ([user-flow-wireframe.md](user-flow-wireframe.md))
 - [x] Draf Naskah PDF Deskripsi Konsep 2 Halaman ([naskah-laporan-2-halaman.md](naskah-laporan-2-halaman.md))
 - [x] Git Repository Local Initialized & Committed (Hash: `e375795`)
-- [ ] Push ke Remote GitHub Repository Pengguna
+- [x] Push ke Remote GitHub Repository Pengguna (`https://github.com/Rapyas-kece/UI-UX.git` - Branch `main`)
 - [ ] Implementasi Visual di Figma & Linking Prototype
 - [ ] Finalisasi PDF 2 Halaman & Administrasi
