@@ -54,3 +54,4 @@ AksesWarga memberikan dampak keberlanjutan nyata:
 * **Sosial & Ekonomi**: Mendorong kemandirian ekonomi penyandang disabilitas dan lansia untuk bekerja dan beraktivitas sehari-hari tanpa rasa takut.
 * **Kebijakan Publik Berbasis Data**: Laporan *crowdsourcing* dari warga menjadi data spasial valid bagi pemerintah daerah dan Dinas PUPR/Perhubungan dalam memprioritaskan perbaikan fasilitas trotoar dan gedung umum.
 * **Pondasi Indonesia Emas 2045**: Menjadi jembatan terwujudnya *Smart and Inclusive Cities* di seluruh Indonesia, di mana tidak ada satu pun warga negara yang tertinggal (*Leave No One Behind*).
+

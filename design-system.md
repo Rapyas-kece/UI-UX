@@ -46,3 +46,4 @@ Font utama: **Plus Jakarta Sans** atau **Inter** (tipe sans-serif modern dengan 
      - *Perbesar Teks (A- / A+)*: Mengubah ukuran teks dasar dari 16px ke 20px / 24px.
      - *Mode Kontras Tinggi*: Mengubah tema menjadi latar hitam pekat teks kuning terang `#FFFF00` (High Contrast Mode).
      - *Mode Suara*: Mengaktifkan pembacaan teks otomatis saat elemen disentuh/diklik.
+

@@ -118,3 +118,4 @@ Dokumen ini adalah cetak biru susunan layout dan alur interaksi untuk diimplemen
   * Latar belakang menjadi hitam `#121212`, teks dan ikon kuning menyala `#FFD166`.
   * Ukuran font diperbesar 150%.
   * Tombol menjadi blok tebal dengan pembatas kontras untuk membuktikan kesiapan penilaian aksesibilitas WCAG kepada juri.
+
