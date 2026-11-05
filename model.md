@@ -55,13 +55,16 @@
 
 ---
 
-## 5. Status Eksekusi & Rencana Kerja Figma
+## 5. Status Eksekusi & Rencana Kerja
 - [x] Inisialisasi memori proyek (`model.md`)
 - [x] Analisis juknis & penentuan strategi juara
 - [x] Penguncian Ide Final: **AksesWarga**
 - [x] Perumusan Problem Statement & Fitur Utama
 - [x] Penyusunan Sitemap (Struktur Informasi)
-- [ ] Panduan Design System (Warna, Tipografi, Kontras WCAG)
-- [ ] Wireframe Layout 5 Layar Utama di Figma
-- [ ] Alur Interaksi Prototype (User Flow)
-- [ ] Draf Naskah PDF Deskripsi Konsep (Maksimal 2 Halaman Sesuai Juknis)
+- [x] Panduan Design System & WCAG 2.1 AAA ([design-system.md](design-system.md))
+- [x] Spesifikasi Wireframe 5 Layar & User Flow Figma ([user-flow-wireframe.md](user-flow-wireframe.md))
+- [x] Draf Naskah PDF Deskripsi Konsep 2 Halaman ([naskah-laporan-2-halaman.md](naskah-laporan-2-halaman.md))
+- [x] Git Repository Local Initialized & Committed (Hash: `e375795`)
+- [ ] Push ke Remote GitHub Repository Pengguna
+- [ ] Implementasi Visual di Figma & Linking Prototype
+- [ ] Finalisasi PDF 2 Halaman & Administrasi
