@@ -10,61 +10,60 @@
 
 ---
 
-## 2. Pilihan Proyek Definitif: "AksesWarga"
-- **Nama Produk**: **AksesWarga**
-- **Tagline**: *"Membuka Ruang Gerak Setara untuk Mobilitas Sehari-hari Menuju Indonesia Emas yang Inklusif"*
-- **Tipe Platform**: Responsive Web Design (Desktop Web dengan integrasi mobile-friendly)
-- **Alasan Paling Inklusif & Paling Bermanfaat**:
-  1. **Paling Inklusif**: Mengakomodasi spektrum disabilitas terlengkap (pengguna kursi roda, tunanetra, lansia, gangguan motorik) dan masyarakat rendah teknologi melalui antarmuka adaptif berbasis WCAG 2.1 AAA.
-  2. **Paling Bermanfaat Sehari-hari**: Digunakan *setiap hari* saat warga hendak keluar rumah (ke tempat kerja, sekolah, faskes, pasar, transportasi publik). Menghilangkan hambatan isolasi sosial & ekonomi kelompok rentan.
-  3. **Visi Indonesia Emas 2045**: Fondasi kota cerdas dan inklusif (*Smart & Inclusive Cities*). Bangsa yang maju diukur dari bagaimana kota dan fasilitas umumnya memanusiakan kelompok yang paling rentan.
+## 2. Pilihan Proyek Final: "KawanTumbuh"
+- **Nama Produk**: **KawanTumbuh**
+- **Tagline**: *"Membangun Ruang Digital Edukasi & Deteksi Dini Tumbuh Kembang Anak Inklusif Menuju Indonesia Emas"*
+- **Tipe Platform**: Responsive Web Design (Desktop-first dengan optimasi mobile web)
+- **Domain Integrasi**: **Education + Healthcare (Edu-Health)**
+- **Alasan 100% Sinkron dengan Juknis**:
+  1. **Indonesia Emas 2045**: Fondasi manusia unggul ditentukan di masa *Golden Age* (0–6 tahun). Deteksi dini dan stimulasi tepat membebaskan anak bangsa dari stunting, keterlambatan bicara (*speech delay*), dan disabilitas kognitif/motorik yang terlambat ditangani.
+  2. **Inklusivitas & Disabilitas**: Berfokus mendampingi anak berkebutuhan khusus (ABK: autisme, ADHD, disleksia, tuna rungu, gangguan motorik) agar tidak terkucilkan di masyarakat.
+  3. **Keterbatasan Teknologi & Rendah Literasi**: Antarmuka visual berbasis ilustrasi/video pendek dan **Voice Guidance** (asisten suara) tanpa istilah medis latin yang rumit.
+  4. **Kebermanfaatan Jangka Panjang Sehari-hari**: Dipraktikkan orang tua **setiap hari** di rumah melalui modul stimulasi bermain mandiri bersama anak.
 
 ---
 
-## 3. Fitur Kunci & Diferensiasi Inovasi
-1. **Peta Navigasi Rute Ramah Mobilitas (Accessible Route Finder)**:
-   - Rekomendasi rute jalan kaki/transportasi harian bebas tangga curam, bebas trotoar bolong, dan ramah kursi roda/tongkat lansia.
-2. **Direktori & Indeks Aksesibilitas Fasilitas Publik (Public Places Accessibility Index)**:
-   - Pengecekan fasilitas umum (Puskesmas, Halte/Stasiun, Pasar, Kantor Kelurahan) dengan indikator spesifik: *Ramp/Bidang Miring, Guiding Block Tunanetra, Lift Prioritas, Toilet Disabilitas*.
-3. **Lapor Hambatan Akses 1-Klik (Crowdsourced Reporting)**:
-   - Pelaporan trotoar rusak atau fasilitas publik yang tidak aksesibel berbasis foto geolokasi + pesan suara (*voice-to-text*), tanpa perlu registrasi rumit.
-4. **Adaptive Accessibility Engine (UI Switcher)**:
-   - Pengubah mode instan: Mode Kontras Tinggi (Low Vision), Mode Target Sentuh Besar (Tremor/Motorik), dan Audio Screen-Reader Friendly.
+## 3. Fitur Kunci & Arsitektur Solusi
+1. **Interactive Visual Milestone Screening (Skrining Mandiri Tumbuh Kembang)**:
+   - Skrining perkembangan balita berbasis KPSP Kemenkes yang disederhanakan ke dalam visual animasi/gambar per kelompok usia (0-12 bln, 1-3 thn, 4-6 thn).
+   - Menghasilkan ringkasan status 4 pilar: Motorik Kasar, Motorik Halus, Bicara/Bahasa, dan Sosialisasi.
+2. **Home-Therapy Playbook (Panduan Stimulasi Harian Mandiri)**:
+   - Kurikulum bermain edukatif untuk melatih wicara dan saraf motorik menggunakan alat dapur/rumah murah (spons air, kancing, gelembung sabun).
+   - Disertai panduan audio langkah demi langkah untuk orang tua.
+3. **Red Flags Alert & Direktori Faskes Tumbuh Kembang**:
+   - Peringatan dini jika ada tanda bahaya medis yang memerlukan rujukan dokter/puskesmas.
+   - Peta dan daftar Faskes/Puskesmas ramah BPJS yang memiliki layanan terapi tumbuh kembang terdekat.
+4. **Adaptive Accessibility Engine (WCAG 2.1 AAA)**:
+   - Fitur pembaca teks otomatis (*Text-to-Speech*) bagi orang tua buta huruf / tunanetra.
+   - Mode Kontras Tinggi dan ukuran teks dinamis ramah pengasuh lansia (kakek/nenek).
 
 ---
 
 ## 4. Struktur Informasi (Sitemap Web)
-- **1. Beranda (Landing & Explorer)**
-  - Hero Search: "Mau ke mana hari ini?" + Filter Kebutuhan Aksesibilitas
-  - Peta Interaktif Fasilitas & Jalur Inklusif Terdekat
-  - Ringkasan Kondisi Jalur & Laporan Terkini
-  - Quick Actions: Cari Rute Aman | Cek Fasilitas | Lapor Hambatan
-- **2. Peta & Navigasi Rute Inklusif**
-  - Input: Asal & Tujuan
-  - Preferensi Akses: Kursi Roda / Ramah Lansia / Tunanetra
-  - Detail Rute: Estimasi Waktu, Titik Ramp, Peringatan Hambatan Jalan
-- **3. Direktori Fasilitas Publik Ramah Disabilitas**
-  - Kategori: Faskes, Transportasi, Pasar/Belanja, Layanan Publik
-  - Profil Tempat: Skor Aksesibilitas, Foto Fasilitas, Review Komunitas
-- **4. Form Lapor Hambatan (Cepat & Inklusif)**
-  - Foto Langsung / Upload Bukti
-  - Rekam Suara Deskripsi Masalah (Auto GPS)
-  - Tiket Laporan & Status Penanganan Dinas Terkait
-- **5. Pengaturan Aksesibilitas (Global Drawer/Modal)**
-  - Ukuran Teks, Kontras Layar, Panduan Navigasi Keyboard/Suara
+- **1. Beranda (Landing Page & Portal Edukasi)**
+  - Hero: Ajakan Deteksi Emas & Pengenalan Milestone Balita
+  - Quick Assessment: Pemilih Usia Anak (0-12 Bulan, 1-3 Tahun, 4-6 Tahun)
+  - Artikel Edukasi Visual: Red Flags Perkembangan Anak
+  - Accessibility Global Toolbar (Ukuran Font, Kontras Tinggi, Audio)
+- **2. Modul Skrining Tumbuh Kembang (Screening Flow)**
+  - Langkah 1: Input Profil Usia Anak
+  - Langkah 2: Pertanyaan Visual Bergambar (Motorik, Wicara, Sensorik)
+  - Langkah 3: Lembar Hasil Evaluasi & Rekomendasi
+- **3. Playbook Stimulasi Harian di Rumah (Home-Therapy)**
+  - Kategori Latihan: Bicara & Bahasa, Motorik Kasar, Sensorik/Motorik Halus
+  - Halaman Detail Aktivitas: Bahan yang Dibutuhkan, Video Langkah Bermain, Tombol Audio
+- **4. Direktori Faskes & Komunitas Pendamping**
+  - Daftar Puskesmas & Klinik Tumbuh Kembang Terdekat
+  - Ruang Tanya Kader Posyandu
+- **5. Global Accessibility Drawer**
 
 ---
 
 ## 5. Status Eksekusi & Rencana Kerja
 - [x] Inisialisasi memori proyek (`model.md`)
-- [x] Analisis juknis & penentuan strategi juara
-- [x] Penguncian Ide Final: **AksesWarga**
-- [x] Perumusan Problem Statement & Fitur Utama
+- [x] Penguncian Ide Final: **KawanTumbuh** (Edu-Health Inklusif)
+- [x] Perumusan Problem Statement, Fitur Utama & Arsitektur
 - [x] Penyusunan Sitemap (Struktur Informasi)
-- [x] Panduan Design System & WCAG 2.1 AAA ([design-system.md](design-system.md))
-- [x] Spesifikasi Wireframe 5 Layar & User Flow Figma ([user-flow-wireframe.md](user-flow-wireframe.md))
-- [x] Draf Naskah PDF Deskripsi Konsep 2 Halaman ([naskah-laporan-2-halaman.md](naskah-laporan-2-halaman.md))
-- [x] Git Repository Local Initialized & Committed (Hash: `e375795`)
-- [x] Push ke Remote GitHub Repository Pengguna (`https://github.com/Rapyas-kece/UI-UX.git` - Branch `main`)
-- [ ] Implementasi Visual di Figma & Linking Prototype
-- [ ] Finalisasi PDF 2 Halaman & Administrasi
+- [ ] Pembaruan Dokumen GitHub ([README.md](README.md), [design-system.md](design-system.md), [user-flow-wireframe.md](user-flow-wireframe.md), [naskah-laporan-2-halaman.md](naskah-laporan-2-halaman.md))
+- [ ] Push Pembaruan ke Remote GitHub (`https://github.com/Rapyas-kece/UI-UX.git`)
+- [ ] Panduan Eksekusi Figma untuk 5 Layar Utama
