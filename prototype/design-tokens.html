@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Tokens & Foundations Specimen — KawanTumbuh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FAF8F5; color: #0F3A40; }
+  </style>
+</head>
+<body class="p-8 md:p-12 max-w-[1200px] mx-auto space-y-12">
+
+  <!-- Header -->
+  <div class="border-b border-stone-300 pb-6">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-[#186A75] text-white flex items-center justify-center text-xl">🎨</div>
+      <div>
+        <h1 class="text-3xl font-extrabold text-[#0F3A40]">Design System & Tokens Specimen</h1>
+        <p class="text-sm text-stone-600">KawanTumbuh (IT-CAS 2026) — Standar Aksesibilitas WCAG 2.1 Level AAA</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: COLOR PALETTE TOKENS -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-bold text-[#0F3A40]">1. Color Palette Tokens</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+      <div class="space-y-2">
+        <div class="h-20 rounded-xl bg-[#0F3A40] shadow-sm"></div>
+        <div class="text-xs">
+          <p class="font-bold text-[#0F3A40]">Deep Teal</p>
+          <p class="text-stone-500 font-mono">#0F3A40</p>
+          <span class="text-[10px] bg-teal-100 text-teal-800 px-1.5 py-0.5 rounded font-semibold">Primary Text (AAA)</span>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="h-20 rounded-xl bg-[#186A75] shadow-sm"></div>
+        <div class="text-xs">
+          <p class="font-bold text-[#0F3A40]">Ocean Teal</p>
+          <p class="text-stone-500 font-mono">#186A75</p>
+          <span class="text-[10px] bg-teal-100 text-teal-800 px-1.5 py-0.5 rounded font-semibold">Brand Primary (AAA)</span>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="h-20 rounded-xl bg-[#E08A00] shadow-sm"></div>
+        <div class="text-xs">
+          <p class="font-bold text-[#0F3A40]">Warm Marigold</p>
+          <p class="text-stone-500 font-mono">#E08A00</p>
+          <span class="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-semibold">Edu Accent (AA)</span>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="h-20 rounded-xl bg-[#1E7B44] shadow-sm"></div>
+        <div class="text-xs">
+          <p class="font-bold text-[#0F3A40]">Meadow Green</p>
+          <p class="text-stone-500 font-mono">#1E7B44</p>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded font-semibold">Success 4 Pilar (AAA)</span>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="h-20 rounded-xl bg-[#C23B22] shadow-sm"></div>
+        <div class="text-xs">
+          <p class="font-bold text-[#0F3A40]">Coral Warning</p>
+          <p class="text-stone-500 font-mono">#C23B22</p>
+          <span class="text-[10px] bg-red-100 text-red-800 px-1.5 py-0.5 rounded font-semibold">Red Flags Alert (AAA)</span>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="h-20 rounded-xl bg-[#FAF8F5] border-2 border-stone-200 shadow-sm"></div>
+        <div class="text-xs">
+          <p class="font-bold text-[#0F3A40]">Cream Surface</p>
+          <p class="text-stone-500 font-mono">#FAF8F5</p>
+          <span class="text-[10px] bg-stone-200 text-stone-800 px-1.5 py-0.5 rounded font-semibold">Eye-friendly Canvas</span>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="h-20 rounded-xl bg-[#121212] shadow-sm"></div>
+        <div class="text-xs">
+          <p class="font-bold text-[#0F3A40]">High Contrast</p>
+          <p class="text-stone-500 font-mono">#121212</p>
+          <span class="text-[10px] bg-yellow-100 text-yellow-900 px-1.5 py-0.5 rounded font-semibold">Senior Mode AAA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: TYPOGRAPHY HIERARCHY -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-bold text-[#0F3A40]">2. Typography Hierarchy (Plus Jakarta Sans)</h2>
+    <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-4">
+      <div class="flex items-baseline justify-between border-b border-stone-100 pb-3">
+        <span class="text-xs font-mono text-stone-400 w-32">H1 (36px / Bold 700)</span>
+        <span class="text-4xl font-extrabold text-[#0F3A40] flex-grow">Kenali Potensi Emas Anak Anda Sejak Dini</span>
+      </div>
+      <div class="flex items-baseline justify-between border-b border-stone-100 pb-3">
+        <span class="text-xs font-mono text-stone-400 w-32">H2 (28px / SemiBold 600)</span>
+        <span class="text-2xl font-bold text-[#0F3A40] flex-grow">4 Pilar Tumbuh Kembang yang Dipantau</span>
+      </div>
+      <div class="flex items-baseline justify-between border-b border-stone-100 pb-3">
+        <span class="text-xs font-mono text-stone-400 w-32">H3 (20px / SemiBold 600)</span>
+        <span class="text-xl font-semibold text-[#0F3A40] flex-grow">Kemampuan Bicara & Bahasa Balita</span>
+      </div>
+      <div class="flex items-baseline justify-between border-b border-stone-100 pb-3">
+        <span class="text-xs font-mono text-stone-400 w-32">Body Large (18px / 400)</span>
+        <span class="text-lg text-stone-700 flex-grow">Apakah anak dapat menunjuk gambar benda yang disebutkan oleh orang tua? (Ramah Lansia)</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="text-xs font-mono text-stone-400 w-32">Caption (14px / Med 500)</span>
+        <span class="text-sm font-medium text-stone-500 flex-grow">Badge Milestone Usia: Bayi 0 - 12 Bulan (Tengkurap, Senyum Sosial)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ACCESSIBILITY & TOUCH-TARGET RULES -->
+  <section class="space-y-4">
+    <h2 class="text-xl font-bold text-[#0F3A40]">3. Master Components & Accessibility Rules</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-3">
+        <h3 class="font-bold text-sm text-[#0F3A40]">Touch-Target Min 52px</h3>
+        <p class="text-xs text-stone-600">Tombol aksi utama berukuran minimal 52px tinggi dan 16px padding untuk mencegah tremor lansia.</p>
+        <button class="w-full min-h-[52px] bg-[#186A75] text-white font-bold rounded-xl flex items-center justify-center gap-2">
+          <span>Tombol Utama (52px)</span>
+        </button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-3">
+        <h3 class="font-bold text-sm text-[#0F3A40]">Audio-Guided Experience</h3>
+        <p class="text-xs text-stone-600">Setiap pertanyaan dan teks panjang dilengkapi tombol pemutar suara instan berbahasa Indonesia.</p>
+        <button class="w-full min-h-[52px] bg-amber-500 hover:bg-amber-400 text-stone-900 font-bold rounded-xl flex items-center justify-center gap-2">
+          <span>🔊 Dengarkan Audio</span>
+        </button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white p-6 rounded-2xl border border-stone-200 space-y-3">
+        <h3 class="font-bold text-sm text-[#0F3A40]">Binary Response Large</h3>
+        <p class="text-xs text-stone-600">Opsi jawaban biner ramah kognitif dengan warna kontras tinggi hijau dan oranye.</p>
+        <div class="grid grid-cols-2 gap-2">
+          <div class="min-h-[52px] bg-[#1E7B44] text-white rounded-xl flex items-center justify-center font-bold text-xs">✓ Bisa</div>
+          <div class="min-h-[52px] bg-amber-600 text-white rounded-xl flex items-center justify-center font-bold text-xs">✕ Belum</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

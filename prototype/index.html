@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KawanTumbuh — Ekosistem Digital Edu-Health & Ekonomi Inklusif Menuju Indonesia Emas</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              deepTeal: '#0A2D33',
+              oceanTeal: '#135E68',
+              tealAccent: '#1FA2B0',
+              tealLight: '#EAF6F8',
+              emerald: '#16733D',
+              emeraldLight: '#E8F7ED',
+              amber: '#D97706',
+              amberLight: '#FEF3C7',
+              coral: '#C0392B',
+              coralLight: '#FDECEB',
+              surface: '#F8FAF9',
+              cardBg: '#FFFFFF',
+            }
+          },
+          boxShadow: {
+            'subtle': '0 4px 20px -2px rgba(10, 45, 51, 0.05)',
+            'card-hover': '0 12px 30px -4px rgba(19, 94, 104, 0.12)',
+            'glow-teal': '0 0 25px rgba(31, 162, 176, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8FAF9;
+      color: #0A2D33;
+    }
+    
+    /* Standar Aksesibilitas WCAG 2.1 AAA - High Contrast Mode */
+    .high-contrast {
+      background-color: #0F1115 !important;
+      color: #FFFFFF !important;
+    }
+    .high-contrast .hc-card {
+      background-color: #171A21 !important;
+      border-color: #FFD166 !important;
+      color: #FFFFFF !important;
+    }
+    .high-contrast .hc-subtext {
+      color: #D1D5DB !important;
+    }
+    .high-contrast .hc-accent {
+      color: #FFD166 !important;
+    }
+    .high-contrast .hc-btn-primary {
+      background-color: #FFD166 !important;
+      color: #000000 !important;
+      font-weight: 800 !important;
+      border: 2px solid #FFD166 !important;
+    }
+    .high-contrast .hc-badge {
+      background-color: #000000 !important;
+      color: #FFD166 !important;
+      border: 1px solid #FFD166 !important;
+    }
+
+    /* Custom Range Slider */
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #135E68;
+      cursor: pointer;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col transition-colors duration-200 antialiased" id="main-body">
+
+  <!-- ============================================================== -->
+  <!-- 1. TOP ACCESSIBILITY TOOLBAR (WCAG 2.1 AAA COMPLIANT)          -->
+  <!-- ============================================================== -->
+  <aside aria-label="Bilah Aksesibilitas Terpadu" class="bg-[#0A2D33] text-white py-2 px-4 md:px-8 border-b border-teal-900/80 sticky top-0 z-50">
+    <div class="max-w-[1440px] mx-auto flex flex-wrap justify-between items-center text-xs md:text-sm gap-3">
+      <!-- Status Badge -->
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+        </span>
+        <span class="font-semibold text-teal-100 tracking-wide text-xs">
+          Aksesibilitas Inklusif: WCAG 2.1 Level AAA & Disabilitas Ramah
+        </span>
+      </div>
+
+      <!-- Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Text Scaler -->
+        <div class="flex items-center gap-1 bg-white/10 px-2 py-0.5 rounded-lg border border-white/15">
+          <span class="text-teal-200 text-xs mr-1 font-medium">Ukuran Teks:</span>
+          <button onclick="changeFontSize(-1)" class="w-6 h-6 flex items-center justify-center font-bold hover:bg-white/20 rounded text-xs transition" title="Kecilkan teks">A-</button>
+          <button onclick="changeFontSize(0)" class="w-6 h-6 flex items-center justify-center font-bold hover:bg-white/20 rounded text-xs transition" title="Ukuran teks normal">A</button>
+          <button onclick="changeFontSize(1)" class="w-6 h-6 flex items-center justify-center font-bold hover:bg-white/20 rounded text-xs transition" title="Besarkan teks">A+</button>
+        </div>
+
+        <!-- High Contrast Mode Toggle -->
+        <button onclick="toggleHighContrast()" class="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-lg font-medium text-xs border border-white/15 transition">
+          <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <span id="contrast-text">Kontras Tinggi</span>
+        </button>
+
+        <!-- Audio Screen Narrator -->
+        <button onclick="narrateHero()" class="flex items-center gap-1.5 bg-brand-amber hover:bg-amber-600 text-white px-3 py-1 rounded-lg font-bold text-xs shadow-sm transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+          </svg>
+          <span>Asisten Suara</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================== -->
+  <!-- 2. MAIN NAVIGATION HEADER                                      -->
+  <!-- ============================================================== -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-stone-200/80 sticky top-[41px] z-40 shadow-sm hc-card transition-colors">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#135E68] to-[#1FA2B0] flex items-center justify-center text-white shadow-md shadow-teal-900/10 group-hover:scale-105 transition-transform">
+          <!-- Sprout & Pulse Vector Icon -->
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 20h10"/>
+            <path d="M10 20c0-4 1.5-6 4-8"/>
+            <path d="M4 12c3 0 6 1 8 4"/>
+            <path d="M12 4a5 5 0 0 1 5 5c0 4-3 7-5 11"/>
+            <path d="M19 8c2.5 0 3 1.5 3 3 0 2.5-3 4-5 4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl font-extrabold tracking-tight text-[#0A2D33] hc-accent">KawanTumbuh</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider bg-teal-50 text-[#135E68] border border-teal-200/80 px-2 py-0.5 rounded-full hc-badge">
+              Edu-Health
+            </span>
+          </div>
+          <p class="text-xs text-stone-500 font-medium hc-subtext">Ekosistem Tumbuh Kembang & Gizi Inklusif</p>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 font-semibold text-sm text-stone-700">
+        <a href="#kesehatan" class="px-3.5 py-2 rounded-xl text-[#135E68] hover:bg-teal-50 flex items-center gap-2 transition">
+          <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+          <span>Kesehatan Anak</span>
+        </a>
+        <a href="#edukasi" class="px-3.5 py-2 rounded-xl hover:text-[#135E68] hover:bg-teal-50 flex items-center gap-2 transition">
+          <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          <span>Edukasi & Terapi</span>
+        </a>
+        <a href="#ekonomi" class="px-3.5 py-2 rounded-xl hover:text-[#135E68] hover:bg-teal-50 flex items-center gap-2 transition">
+          <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span>Ekonomi & Gizi Murah</span>
+        </a>
+        <a href="#faskes" class="px-3.5 py-2 rounded-xl hover:text-[#135E68] hover:bg-teal-50 flex items-center gap-2 transition">
+          <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span>Faskes BPJS Terdekat</span>
+        </a>
+      </nav>
+
+      <!-- Right Action CTAs -->
+      <div class="flex items-center gap-3">
+        <a href="screening.html" class="inline-flex items-center gap-2.5 bg-[#135E68] hover:bg-[#0A2D33] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-teal-900/15 hover:shadow-lg transition-all hc-btn-primary">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span>Mulai Skrining Anak</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================== -->
+  <!-- 3. HERO SECTION (TRI-PILLAR DASHBOARD INTEGRATION)             -->
+  <!-- ============================================================== -->
+  <main class="flex-grow">
+    <section class="relative overflow-hidden py-12 lg:py-20 bg-gradient-to-b from-teal-50/60 via-[#F8FAF9] to-white border-b border-stone-200/60">
+      
+      <!-- Subtle Background Circles -->
+      <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-teal-200/30 to-amber-200/20 blur-3xl -z-10 rounded-full pointer-events-none"></div>
+
+      <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copywriting & Pillars -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Pillar Pills -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100/90 text-emerald-800 border border-emerald-300/60">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Healthcare
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-teal-100/90 text-[#135E68] border border-teal-300/60">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#135E68]"></span> Education
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100/90 text-amber-800 border border-amber-300/60">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> Economy
+            </span>
+            <span class="text-xs font-semibold text-stone-500 pl-2">Indonesia Emas 2045</span>
+          </div>
+
+          <!-- Main Hero Title -->
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0A2D33] tracking-tight leading-[1.15] hc-accent">
+            Menjaga Tumbuh Kembang Anak, <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#135E68] to-[#1FA2B0]">Mencerdaskan Generasi Emas.</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-base md:text-lg text-stone-600 max-w-2xl leading-relaxed hc-subtext font-normal">
+            Platform terpadu deteksi dini tumbuh kembang balita (KPSP Kemenkes), panduan stimulasi bermain mandiri di rumah (*home-therapy*), serta kalkulator optimasi belanja pangan bergizi murah untuk memutus rantai kemiskinan dan stunting.
+          </p>
+
+          <!-- Action Buttons & Audio Narrator -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="screening.html" class="inline-flex items-center gap-3 bg-[#135E68] hover:bg-[#0A2D33] text-white px-7 py-4 rounded-2xl font-bold text-base shadow-lg shadow-teal-900/20 hover:scale-[1.02] transition-all hc-btn-primary">
+              <svg class="w-5 h-5 text-teal-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>Deteksi Dini Anak Sekarang</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+
+            <a href="#simulator-gizi" class="inline-flex items-center gap-2.5 bg-white hover:bg-stone-50 text-[#0A2D33] px-6 py-4 rounded-2xl font-bold text-base border border-stone-300/80 shadow-sm transition-all hc-card">
+              <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+              <span>Kalkulator Gizi Hemat</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges (KPI Impact) -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-200/80">
+            <div>
+              <div class="text-2xl font-extrabold text-[#135E68] hc-accent">80%</div>
+              <div class="text-xs text-stone-500 font-medium hc-subtext">Otak Terbentuk di Golden Age (0-6 Thn)</div>
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold text-emerald-700 hc-accent">Rp 20.000</div>
+              <div class="text-xs text-stone-500 font-medium hc-subtext">Cukup Protein Harian Anak dari Bahan Lokal</div>
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold text-amber-700 hc-accent">0 Biaya</div>
+              <div class="text-xs text-stone-500 font-medium hc-subtext">100% Gratis Tanpa Batasan Ekonomi</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Realtime Child Health & Economy Cockpit -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl shadow-teal-900/8 border border-teal-100 hc-card relative">
+            
+            <!-- Card Header: Profile Snapshot -->
+            <div class="flex items-center justify-between pb-6 border-b border-stone-100">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center text-xl font-bold text-[#135E68]">
+                  👶
+                </div>
+                <div>
+                  <h3 class="font-bold text-[#0A2D33] text-base hc-accent">Ananda Rayyan</h3>
+                  <p class="text-xs text-stone-500 hc-subtext">Usia: 2 Tahun 4 Bulan • Terakhir Pantau: Kemarin</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Tumbuh Baik
+              </span>
+            </div>
+
+            <!-- 3 Integrated Metrics -->
+            <div class="space-y-4 py-6">
+              
+              <!-- Metric 1: Healthcare Milestone (KPSP Score) -->
+              <div class="p-4 rounded-2xl bg-teal-50/60 border border-teal-100/80 space-y-2">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold text-[#135E68] flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Pilar Kesehatan (KPSP Kemenkes)
+                  </span>
+                  <span class="font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded text-[11px]">9/10 Milestone</span>
+                </div>
+                <div class="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden">
+                  <div class="bg-gradient-to-r from-[#135E68] to-emerald-500 h-full rounded-full" style="width: 90%;"></div>
+                </div>
+                <p class="text-[11px] text-stone-600 hc-subtext">Motorik Kasar & Halus sangat baik. Perlu stimulasi wicara 2 kata.</p>
+              </div>
+
+              <!-- Metric 2: Education (Home-Therapy Playbook) -->
+              <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-100/80 space-y-2">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold text-amber-900 flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    Pilar Edukasi (Aktivitas Hari Ini)
+                  </span>
+                  <span class="font-bold text-amber-800 text-[11px]">15 Menit Bermain</span>
+                </div>
+                <div class="flex items-center justify-between text-xs pt-1">
+                  <span class="font-semibold text-stone-800 hc-accent">Permainan: "Meniup Gelembung & Bola Kapas"</span>
+                  <a href="#playbook" class="text-xs font-bold text-[#135E68] hover:underline">Mulai →</a>
+                </div>
+              </div>
+
+              <!-- Metric 3: Economy (Budget Protein Tracker) -->
+              <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-100/80 space-y-2">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-bold text-emerald-900 flex items-center gap-1.5">
+                    <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Pilar Ekonomi (Efisiensi Gizi Keluarga)
+                  </span>
+                  <span class="font-bold text-emerald-800 text-[11px]">Hemat Rp 45.000 / Hari</span>
+                </div>
+                <p class="text-[11px] text-stone-600 hc-subtext">
+                  Kebutuhan protein hewani tercukupi dengan <strong>2 Butir Telur + Tempe + Bayam</strong> lokal desa.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Action Button inside Cockpit -->
+            <a href="screening.html" class="w-full py-3.5 px-4 bg-[#135E68] hover:bg-[#0A2D33] text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition hc-btn-primary">
+              <span>Buka Dasbor Lengkap Balita</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- 4. PILAR 1: HEALTHCARE (DETEKSI & RED FLAGS ABK)              -->
+    <!-- ============================================================== -->
+    <section id="kesehatan" class="py-16 md:py-24 max-w-[1440px] mx-auto px-6 md:px-12 border-b border-stone-200/60">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-700 mb-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Pilar 1: Healthcare & Skrining Dini
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#0A2D33] tracking-tight hc-accent">
+            Deteksi Dini Disabilitas & Red Flags Tumbuh Kembang
+          </h2>
+          <p class="text-stone-600 mt-2 max-w-2xl text-sm md:text-base hc-subtext">
+            Berdasarkan Buku KIA & instrumen KPSP Kemenkes RI yang diterjemahkan menjadi visual interaktif ramah orang tua awam tanpa bahasa latin rumit.
+          </p>
+        </div>
+        <a href="screening.html" class="inline-flex items-center gap-2 text-sm font-bold text-[#135E68] hover:underline">
+          <span>Lihat Semua Tahapan Usia</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- 3 Age Tier Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1: 0 - 12 Bulan -->
+        <div class="bg-white rounded-2xl p-7 border border-stone-200/80 shadow-subtle hover:shadow-card-hover transition-all hc-card flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 bg-teal-50 text-[#135E68] border border-teal-200/60 rounded-full text-xs font-bold">
+                0 – 12 Bulan (Bayi)
+              </span>
+              <span class="text-xs text-stone-400 font-semibold">Kategori 1</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#0A2D33] mb-2 hc-accent">Tahap Penglihatan & Pendengaran Awal</h3>
+            <p class="text-xs text-stone-600 mb-4 leading-relaxed hc-subtext">
+              Deteksi dini tanda tunarungu dan respons sosial pertama bayi. Memastikan bayi tidak mengalami gangguan sensorik mata dan telinga.
+            </p>
+            <div class="space-y-2 text-xs text-stone-700 bg-stone-50 p-3.5 rounded-xl border border-stone-100 hc-card">
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-emerald-600 font-bold">✓</span> Menoleh saat mendengar suara kerincingan/panggilan
+              </div>
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-emerald-600 font-bold">✓</span> Membalas senyuman orang tua (Social Smile)
+              </div>
+              <div class="flex items-center gap-2 font-medium text-amber-700">
+                <span class="font-bold">⚠️ Red Flag:</span> Bayi tidak bereaksi saat ada suara keras
+              </div>
+            </div>
+          </div>
+          <div class="pt-6">
+            <a href="screening.html" class="w-full py-2.5 px-4 bg-stone-100 hover:bg-[#135E68] hover:text-white text-[#0A2D33] rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition">
+              <span>Mulai Skrining 0-12 Bulan</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: 1 - 3 Tahun (Featured Focus) -->
+        <div class="bg-white rounded-2xl p-7 border-2 border-[#135E68] shadow-lg shadow-teal-900/5 hover:shadow-card-hover transition-all hc-card flex flex-col justify-between relative">
+          <span class="absolute -top-3 right-6 bg-[#135E68] text-white px-3 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider">
+            Periode Paling Kritis
+          </span>
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 bg-amber-50 text-amber-800 border border-amber-200/60 rounded-full text-xs font-bold">
+                1 – 3 Tahun (Batita)
+              </span>
+              <span class="text-xs text-amber-600 font-bold">Deteksi Speech Delay & Autisme</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#0A2D33] mb-2 hc-accent">Tahap Wicara, Berjalan & Interaksi</h3>
+            <p class="text-xs text-stone-600 mb-4 leading-relaxed hc-subtext">
+              Periode krusial mendeteksi keterlambatan bicara (*Speech Delay*), ciri awal spektrum autisme, dan kemampuan motorik kasar mandiri.
+            </p>
+            <div class="space-y-2 text-xs text-stone-700 bg-teal-50/50 p-3.5 rounded-xl border border-teal-100/60 hc-card">
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-emerald-600 font-bold">✓</span> Mampu merangkai 2 kata ("Mau minum", "Mama pulang")
+              </div>
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-emerald-600 font-bold">✓</span> Melakukan kontak mata saat diajak bicara
+              </div>
+              <div class="flex items-center gap-2 font-medium text-coral font-bold">
+                <span class="text-coral">⚠️ Red Flag:</span> Belum ada kata bermakna di usia 2 tahun
+              </div>
+            </div>
+          </div>
+          <div class="pt-6">
+            <a href="screening.html" class="w-full py-2.5 px-4 bg-[#135E68] hover:bg-[#0A2D33] text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition hc-btn-primary">
+              <span>Mulai Skrining 1-3 Tahun (Rekomendasi)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: 4 - 6 Tahun -->
+        <div class="bg-white rounded-2xl p-7 border border-stone-200/80 shadow-subtle hover:shadow-card-hover transition-all hc-card flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200/60 rounded-full text-xs font-bold">
+                4 – 6 Tahun (Pra-Sekolah)
+              </span>
+              <span class="text-xs text-stone-400 font-semibold">Kategori 3</span>
+            </div>
+            <h3 class="text-xl font-bold text-[#0A2D33] mb-2 hc-accent">Kemandirian, Motorik Halus & Emosi</h3>
+            <p class="text-xs text-stone-600 mb-4 leading-relaxed hc-subtext">
+              Kesiapan masuk sekolah: konsentrasi belajar (ADHD), koordinasi tangan memegang pensil (disleksia), dan regulasi emosi bersosialisasi.
+            </p>
+            <div class="space-y-2 text-xs text-stone-700 bg-stone-50 p-3.5 rounded-xl border border-stone-100 hc-card">
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-emerald-600 font-bold">✓</span> Mampu mengancingkan baju sendiri
+              </div>
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-emerald-600 font-bold">✓</span> Menceritakan pengalaman sederhana kepada teman
+              </div>
+              <div class="flex items-center gap-2 font-medium text-amber-700">
+                <span class="font-bold">⚠️ Red Flag:</span> Tantrum berlebihan & kesulitan kontak fisik
+              </div>
+            </div>
+          </div>
+          <div class="pt-6">
+            <a href="screening.html" class="w-full py-2.5 px-4 bg-stone-100 hover:bg-[#135E68] hover:text-white text-[#0A2D33] rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition">
+              <span>Mulai Skrining 4-6 Tahun</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- 5. PILAR 2: EDUCATION (HOME-THERAPY PLAYBOOK)                   -->
+    <!-- ============================================================== -->
+    <section id="edukasi" class="py-16 md:py-24 bg-stone-100/60 border-b border-stone-200/60">
+      <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#135E68] bg-teal-100/80 px-3 py-1 rounded-full border border-teal-200">
+            Pilar 2: Education & Terapi Bermain Mandiri
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#0A2D33] tracking-tight hc-accent">
+            Home-Therapy Playbook: Terapi Murah Tanpa Alat Mahal
+          </h2>
+          <p class="text-stone-600 text-sm md:text-base hc-subtext">
+            Banyak orang tua mengira terapi tumbuh kembang harus di rumah sakit mewah dengan jutaan rupiah. Padahal, stimulasi saraf terbaik bisa dilakukan setiap hari di rumah menggunakan benda-benda sederhana di dapur.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Module 1: Melatih Wicara -->
+          <div class="bg-white rounded-3xl p-6 md:p-8 border border-stone-200/80 shadow-subtle hover:shadow-card-hover transition-all hc-card flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-800">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+              </div>
+              <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-teal-50 text-[#135E68]">Stimulasi Wicara & Mulut</span>
+              <h3 class="text-xl font-bold text-[#0A2D33] hc-accent">Permainan Meniup Bola Kapas</h3>
+              <p class="text-xs text-stone-600 leading-relaxed hc-subtext">
+                Melatih kekuatan otot bibir, rahang, dan pernapasan balita yang sangat dibutuhkan untuk membentuk konsonan huruf (P, B, M, T).
+              </p>
+              <div class="p-3 bg-stone-50 rounded-xl text-xs space-y-1 text-stone-700 hc-card">
+                <p class="font-bold text-stone-900 hc-accent">Alat Murah di Rumah:</p>
+                <p>1 Sedotan Minum + 2 Bola Kapas Kecil (Biaya: Rp 500)</p>
+              </div>
+            </div>
+            <div class="pt-6">
+              <button onclick="playAudioDemo('Latihan meniup kapas melatih otot bibir untuk berbicara')" class="w-full py-2.5 px-4 bg-teal-50 hover:bg-[#135E68] hover:text-white text-[#135E68] rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
+                <span>Dengarkan Panduan Suara</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Module 2: Melatih Sensorik & Fokus (Autisme/ADHD) -->
+          <div class="bg-white rounded-3xl p-6 md:p-8 border border-stone-200/80 shadow-subtle hover:shadow-card-hover transition-all hc-card flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-800">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/>
+                </svg>
+              </div>
+              <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-amber-50 text-amber-900">Sensorik & Ketenangan Emosi</span>
+              <h3 class="text-xl font-bold text-[#0A2D33] hc-accent">Bermain Meremas Spons & Air</h3>
+              <p class="text-xs text-stone-600 leading-relaxed hc-subtext">
+                Membantu anak yang hipersensitif terhadap sentuhan atau mudah tantrum untuk menenangkan sistem saraf dan melatih fokus sensasi rabaan.
+              </p>
+              <div class="p-3 bg-stone-50 rounded-xl text-xs space-y-1 text-stone-700 hc-card">
+                <p class="font-bold text-stone-900 hc-accent">Alat Murah di Rumah:</p>
+                <p>1 Ember Kecil Air Hangat + 1 Spons Cuci Piring Baru</p>
+              </div>
+            </div>
+            <div class="pt-6">
+              <button onclick="playAudioDemo('Bermain meremas spons air membantu relaksasi saraf sensorik anak')" class="w-full py-2.5 px-4 bg-amber-50 hover:bg-amber-600 hover:text-white text-amber-900 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
+                <span>Dengarkan Panduan Suara</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Module 3: Melatih Motorik Halus (Kesiapan Menulis) -->
+          <div class="bg-white rounded-3xl p-6 md:p-8 border border-stone-200/80 shadow-subtle hover:shadow-card-hover transition-all hc-card flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-800">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                </svg>
+              </div>
+              <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-900">Motorik Halus & Otak</span>
+              <h3 class="text-xl font-bold text-[#0A2D33] hc-accent">Memilah Kancing & Biji Kacang</h3>
+              <p class="text-xs text-stone-600 leading-relaxed hc-subtext">
+                Melatih jepitan jari jempol dan telunjuk (*pincer grasp*), dasar utama kemampuan memegang pensil, menyuap makan, dan koordinasi mata-tangan.
+              </p>
+              <div class="p-3 bg-stone-50 rounded-xl text-xs space-y-1 text-stone-700 hc-card">
+                <p class="font-bold text-stone-900 hc-accent">Alat Murah di Rumah:</p>
+                <p>1 Mangkok Campuran Biji Kacang Hijau & Kedelai</p>
+              </div>
+            </div>
+            <div class="pt-6">
+              <button onclick="playAudioDemo('Latihan memilah biji kacang melatih kekuatan jari jemari untuk memegang pensil')" class="w-full py-2.5 px-4 bg-emerald-50 hover:bg-emerald-700 hover:text-white text-emerald-900 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
+                <span>Dengarkan Panduan Suara</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- 6. PILAR 3: ECONOMY (SMART GIZI BUDGET SIMULATOR)              -->
+    <!-- ============================================================== -->
+    <section id="ekonomi" class="py-16 md:py-24 max-w-[1440px] mx-auto px-6 md:px-12 border-b border-stone-200/60">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" id="simulator-gizi">
+        
+        <!-- Left: Interactive Budget Slider -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+            Pilar 3: Ekonomi Keluarga & Ketahanan Gizi Lokal
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#0A2D33] tracking-tight hc-accent">
+            Kalkulator Belanja Gizi Cerdas: <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-amber-500">Makan Bergizi Tanpa Susu Mahal</span>
+          </h2>
+          <p class="text-stone-600 text-sm md:text-base leading-relaxed hc-subtext">
+            Banyak keluarga prasejahtera merasa gizi anak itu mahal. Dengan mengoptimalkan pangan lokal desa (telur ayam, ikan lele, tempe, dan daun kelor), kebutuhan protein otak balita tercukupi 100% dengan biaya kurang dari harga sebungkus rokok.
+          </p>
+
+          <!-- Interactive Control Card -->
+          <div class="bg-white p-6 rounded-3xl border border-stone-200 shadow-subtle hc-card space-y-5">
+            <div class="flex justify-between items-center">
+              <label for="budgetRange" class="font-bold text-sm text-[#0A2D33] hc-accent">Atur Anggaran Belanja Makan Harian:</label>
+              <span id="budgetValue" class="text-xl font-extrabold text-amber-600 bg-amber-50 px-3 py-1 rounded-xl border border-amber-200">Rp 25.000</span>
+            </div>
+            
+            <input type="range" id="budgetRange" min="15000" max="60000" step="5000" value="25000" oninput="updateNutritionBudget(this.value)" class="w-full h-3 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-[#135E68]">
+            
+            <div class="flex justify-between text-[11px] font-semibold text-stone-400">
+              <span>Rp 15.000 (Minimal)</span>
+              <span>Rp 35.000 (Menengah)</span>
+              <span>Rp 60.000 (Optimal)</span>
+            </div>
+
+            <!-- Savings Comparison Banner -->
+            <div class="p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200/80 flex items-center justify-between text-xs text-emerald-900">
+              <div>
+                <span class="font-bold block">Hemat Finansial Keluarga:</span>
+                <span class="text-[11px] text-emerald-700">Dibandingkan membeli susu formula impor kaleng Rp 180.000/minggu.</span>
+              </div>
+              <span class="font-extrabold text-base text-emerald-700 whitespace-nowrap">Hemat 85%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Dynamic Basket Output -->
+        <div class="lg:col-span-6">
+          <div class="bg-gradient-to-br from-[#0A2D33] to-[#135E68] text-white p-8 rounded-3xl shadow-xl space-y-6">
+            
+            <div class="flex justify-between items-center border-b border-teal-700/60 pb-4">
+              <div>
+                <span class="text-xs text-teal-200 font-medium uppercase tracking-wider">Rekomendasi Menu Gizi Seimbang</span>
+                <h3 class="text-xl font-extrabold text-white" id="basketTitle">Paket Gizi Keluarga Mandiri</h3>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-teal-200 block">Total Protein Otak</span>
+                <span class="text-2xl font-extrabold text-amber-300" id="proteinOutput">38 Gram</span>
+              </div>
+            </div>
+
+            <!-- Itemized Ingredients List -->
+            <div class="space-y-3" id="ingredientsList">
+              <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+                <div class="flex items-center gap-3">
+                  <span class="text-lg">🥚</span>
+                  <div>
+                    <span class="font-bold block">2 Butir Telur Ayam Ras</span>
+                    <span class="text-[11px] text-teal-200">Protein Hewani Utama Otak</span>
+                  </div>
+                </div>
+                <span class="font-semibold text-white">Rp 5.000</span>
+              </div>
+
+              <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+                <div class="flex items-center gap-3">
+                  <span class="text-lg">🐟</span>
+                  <div>
+                    <span class="font-bold block">1 Ekor Ikan Lele / Kembung Segar</span>
+                    <span class="text-[11px] text-teal-200">Kaya Asam Lemak Omega 3 & Zat Besi</span>
+                  </div>
+                </div>
+                <span class="font-semibold text-white">Rp 10.000</span>
+              </div>
+
+              <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+                <div class="flex items-center gap-3">
+                  <span class="text-lg">🌿</span>
+                  <div>
+                    <span class="font-bold block">1 Ikat Daun Kelor / Bayam Hijau</span>
+                    <span class="text-[11px] text-teal-200">Asam Folat & Serat Alami</span>
+                  </div>
+                </div>
+                <span class="font-semibold text-white">Rp 3.000</span>
+              </div>
+
+              <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+                <div class="flex items-center gap-3">
+                  <span class="text-lg">🧈</span>
+                  <div>
+                    <span class="font-bold block">1 Papan Tempe Kedelai Lokal</span>
+                    <span class="text-[11px] text-teal-200">Probiotik & Protein Nabati</span>
+                  </div>
+                </div>
+                <span class="font-semibold text-white">Rp 4.000</span>
+              </div>
+            </div>
+
+            <!-- Posyandu Voucher Synergy -->
+            <div class="pt-4 border-t border-teal-700/60 flex items-center justify-between text-xs text-teal-200">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
+                Tersedia Voucher Subsidi Bahan Pangan di Posyandu Desa
+              </span>
+              <button onclick="alert('Kupon subsidi pangan Rp 10.000 berhasil diklaim untuk posyandu terdekat!')" class="bg-amber-400 hover:bg-amber-300 text-[#0A2D33] font-bold px-3 py-1.5 rounded-lg transition">
+                Klaim Kupon
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- 7. DIRECTORY & POSYANDU FINDER (FASKES & BPJS INTEGRATION)     -->
+    <!-- ============================================================== -->
+    <section id="faskes" class="py-16 md:py-24 max-w-[1440px] mx-auto px-6 md:px-12">
+      <div class="bg-teal-50/70 rounded-3xl p-8 md:p-12 border border-teal-100 hc-card">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-bold text-[#135E68] uppercase tracking-wider">Layanan Rujukan Berjenjang</span>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-[#0A2D33] hc-accent">
+              Ditemukan Tanda Bahaya pada Anak? Dapatkan Rujukan Faskes Gratis via BPJS
+            </h2>
+            <p class="text-stone-600 text-sm leading-relaxed hc-subtext">
+              Jika hasil skrining menunjukkan indikasi speech delay berat atau autisme, KawanTumbuh memandu langkah berobat ke Puskesmas tingkat 1 untuk mendapatkan rujukan dokter spesialis anak tanpa biaya tambahan.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200 text-xs font-bold text-stone-800 hc-card">
+                <span class="text-emerald-600">✓</span> 100% Ditanggung BPJS Kesehatan
+              </span>
+              <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-stone-200 text-xs font-bold text-stone-800 hc-card">
+                <span class="text-emerald-600">✓</span> Jalur Prioritas Disabilitas
+              </span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-teal-100 shadow-sm hc-card space-y-3">
+            <h4 class="font-bold text-sm text-[#0A2D33] hc-accent">Cari Faskes / Posyandu Terdekat:</h4>
+            <div class="flex gap-2">
+              <input type="text" placeholder="Masukkan nama kecamatan/kelurahan..." class="flex-grow px-3.5 py-2.5 rounded-xl border border-stone-300 text-xs focus:outline-none focus:ring-2 focus:ring-[#135E68] hc-card">
+              <button class="bg-[#135E68] text-white px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-[#0A2D33] transition hc-btn-primary">
+                Cari
+              </button>
+            </div>
+            <p class="text-[11px] text-stone-500 hc-subtext">
+              Terhubung dengan 10.200+ Puskesmas dan 300.000+ Posyandu aktif di seluruh Indonesia.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- 8. FOOTER WITH COMPETITION & ACCREDITATION METADATA            -->
+  <!-- ============================================================== -->
+  <footer class="bg-[#0A2D33] text-white py-12 px-6 md:px-12 border-t border-teal-900/60">
+    <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+      
+      <div class="space-y-3 md:col-span-2">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🌱</span>
+          <span class="text-xl font-bold text-white tracking-tight">KawanTumbuh</span>
+        </div>
+        <p class="text-stone-300 max-w-md leading-relaxed">
+          Karya Inovasi Desain Web pada <strong>IT - Competition AMIKOM Surakarta (IT-CAS) 2026</strong>. Membangun ruang digital inklusif yang menyatukan Pendidikan, Kesehatan, dan Ketahanan Ekonomi keluarga menuju Indonesia Emas 2045.
+        </p>
+        <p class="text-teal-300 text-[11px]">
+          Mematuhi Pedoman Desain Aksesibilitas WCAG 2.1 Level AAA (Disability & Low-Literacy Friendly).
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white text-sm mb-3">Tri-Pillar Ekosistem</h4>
+        <ul class="space-y-2 text-stone-300">
+          <li><a href="#kesehatan" class="hover:text-amber-300 transition">Healthcare: KPSP Kemenkes</a></li>
+          <li><a href="#edukasi" class="hover:text-amber-300 transition">Education: Home-Therapy Playbook</a></li>
+          <li><a href="#ekonomi" class="hover:text-amber-300 transition">Economy: Smart Budgeting Gizi</a></li>
+          <li><a href="screening.html" class="hover:text-amber-300 transition">Skrining Interaktif Balita</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white text-sm mb-3">Aksesibilitas & Bantuan</h4>
+        <ul class="space-y-2 text-stone-300">
+          <li><button onclick="toggleHighContrast()" class="hover:text-amber-300 text-left">Mode Kontras Tinggi (High Contrast)</button></li>
+          <li><button onclick="changeFontSize(1)" class="hover:text-amber-300 text-left">Perbesar Teks Layar (+)</button></li>
+          <li><button onclick="narrateHero()" class="hover:text-amber-300 text-left">Narasikan Halaman Ini (Voice)</button></li>
+          <li><a href="https://github.com/Rapyas-kece/UI-UX" target="_blank" class="hover:text-amber-300">GitHub Repository Proyek</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1440px] mx-auto pt-6 border-t border-teal-900/80 flex flex-wrap justify-between items-center text-xs text-stone-400 gap-3">
+      <p>© 2026 Tim KawanTumbuh — IT-CAS AMIKOM Surakarta. Hak Cipta Dilindungi.</p>
+      <div class="flex items-center gap-4">
+        <span>Kategori: UI/UX Web Design (Pelajar)</span>
+        <span>•</span>
+        <span>Status: Siap Prototype Figma</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- 9. JAVASCRIPT: ACCESSIBILITY & DYNAMIC SIMULATOR LOGIC         -->
+  <!-- ============================================================== -->
+  <script>
+    // 1. Text Scaler Logic (WCAG AAA)
+    let currentScaleIndex = 0;
+    const scales = ['100%', '115%', '130%'];
+    function changeFontSize(delta) {
+      if (delta === 0) currentScaleIndex = 0;
+      else currentScaleIndex = Math.max(0, Math.min(scales.length - 1, currentScaleIndex + delta));
+      document.documentElement.style.fontSize = scales[currentScaleIndex];
+    }
+
+    // 2. High Contrast Mode Toggle (WCAG AAA)
+    let isHighContrast = false;
+    function toggleHighContrast() {
+      isHighContrast = !isHighContrast;
+      const body = document.getElementById('main-body');
+      const text = document.getElementById('contrast-text');
+      if (isHighContrast) {
+        body.classList.add('high-contrast');
+        text.innerText = "Mode Normal";
+      } else {
+        body.classList.remove('high-contrast');
+        text.innerText = "Kontras Tinggi";
+      }
+    }
+
+    // 3. Web Speech API (Voice Narrator)
+    function narrateHero() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const text = "Selamat datang di KawanTumbuh. Platform ruang digital inklusif yang menyatukan kesehatan anak, edukasi bermain di rumah, dan kalkulator gizi hemat keluarga menuju Indonesia Emas dua ribu empat puluh lima. Tekan tombol mulai skrining untuk mendeteksi tumbuh kembang anak Anda secara gratis.";
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'id-ID';
+        utterance.rate = 0.95;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Browser Anda belum mendukung text-to-speech audio.");
+      }
+    }
+
+    function playAudioDemo(message) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(message);
+        utterance.lang = 'id-ID';
+        utterance.rate = 0.95;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert(message);
+      }
+    }
+
+    // 4. Interactive Smart Nutrition & Budget Calculator (Pilar Ekonomi)
+    function updateNutritionBudget(value) {
+      const budgetDisplay = document.getElementById('budgetValue');
+      const proteinOutput = document.getElementById('proteinOutput');
+      const basketTitle = document.getElementById('basketTitle');
+      const ingredientsList = document.getElementById('ingredientsList');
+
+      const formatted = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value);
+      budgetDisplay.innerText = formatted;
+
+      if (value <= 20000) {
+        proteinOutput.innerText = "28 Gram";
+        basketTitle.innerText = "Paket Gizi Hemat Dasar";
+        ingredientsList.innerHTML = `
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🥚</span>
+              <div>
+                <span class="font-bold block">2 Butir Telur Ayam Ras</span>
+                <span class="text-[11px] text-teal-200">Protein Hewani Utama</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 5.000</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🧈</span>
+              <div>
+                <span class="font-bold block">1 Papan Tempe Kedelai</span>
+                <span class="text-[11px] text-teal-200">Protein Nabati & Kalsium</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 4.000</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🌿</span>
+              <div>
+                <span class="font-bold block">1 Ikat Daun Kelor Desa</span>
+                <span class="text-[11px] text-teal-200">Zat Besi & Vitamin Otak</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 2.500</span>
+          </div>
+        `;
+      } else if (value <= 40000) {
+        proteinOutput.innerText = "42 Gram";
+        basketTitle.innerText = "Paket Gizi Seimbang Keluarga";
+        ingredientsList.innerHTML = `
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🥚</span>
+              <div>
+                <span class="font-bold block">2 Butir Telur Ayam Ras</span>
+                <span class="text-[11px] text-teal-200">Protein Hewani Utama</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 5.000</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🐟</span>
+              <div>
+                <span class="font-bold block">1 Ekor Ikan Kembung / Lele</span>
+                <span class="text-[11px] text-teal-200">Asam Lemak Omega 3 Otak</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 10.000</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🧈</span>
+              <div>
+                <span class="font-bold block">1 Papan Tempe Kedelai</span>
+                <span class="text-[11px] text-teal-200">Protein Nabati</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 4.000</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🥕</span>
+              <div>
+                <span class="font-bold block">Wortel & Sayur Bayam</span>
+                <span class="text-[11px] text-teal-200">Vitamin A & Serat</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 3.500</span>
+          </div>
+        `;
+      } else {
+        proteinOutput.innerText = "58 Gram";
+        basketTitle.innerText = "Paket Gizi Prima Emas";
+        ingredientsList.innerHTML = `
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🥩</span>
+              <div>
+                <span class="font-bold block">150g Hati Sapi / Daging Ayam</span>
+                <span class="text-[11px] text-teal-200">Cegah Anemia & Stunting</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 18.000</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🐟</span>
+              <div>
+                <span class="font-bold block">Ikan Segar Lokal (Kembung)</span>
+                <span class="text-[11px] text-teal-200">Omega 3 & DHA</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 12.000</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🥚</span>
+              <div>
+                <span class="font-bold block">2 Butir Telur Rebus</span>
+                <span class="text-[11px] text-teal-200">Protein Murni</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 5.000</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-white/10 rounded-xl border border-white/10 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-lg">🥦</span>
+              <div>
+                <span class="font-bold block">Sayur Hijau & Buah Pisang</span>
+                <span class="text-[11px] text-teal-200">Kalium & Mikronutrien</span>
+              </div>
+            </div>
+            <span class="font-semibold text-white">Rp 6.000</span>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

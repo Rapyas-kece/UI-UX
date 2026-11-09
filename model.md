@@ -12,14 +12,15 @@
 
 ## 2. Pilihan Proyek Final: "KawanTumbuh"
 - **Nama Produk**: **KawanTumbuh**
-- **Tagline**: *"Membangun Ruang Digital Edukasi & Deteksi Dini Tumbuh Kembang Anak Inklusif Menuju Indonesia Emas"*
-- **Tipe Platform**: Responsive Web Design (Desktop-first dengan optimasi mobile web)
-- **Domain Integrasi**: **Education + Healthcare (Edu-Health)**
-- **Alasan 100% Sinkron dengan Juknis**:
-  1. **Indonesia Emas 2045**: Fondasi manusia unggul ditentukan di masa *Golden Age* (0–6 tahun). Deteksi dini dan stimulasi tepat membebaskan anak bangsa dari stunting, keterlambatan bicara (*speech delay*), dan disabilitas kognitif/motorik yang terlambat ditangani.
-  2. **Inklusivitas & Disabilitas**: Berfokus mendampingi anak berkebutuhan khusus (ABK: autisme, ADHD, disleksia, tuna rungu, gangguan motorik) agar tidak terkucilkan di masyarakat.
-  3. **Keterbatasan Teknologi & Rendah Literasi**: Antarmuka visual berbasis ilustrasi/video pendek dan **Voice Guidance** (asisten suara) tanpa istilah medis latin yang rumit.
-  4. **Kebermanfaatan Jangka Panjang Sehari-hari**: Dipraktikkan orang tua **setiap hari** di rumah melalui modul stimulasi bermain mandiri bersama anak.
+- **Tagline**: *"Membangun Ekosistem Digital Edu-Health & Ekonomi Inklusif Menuju Generasi Indonesia Emas"*
+- **Tipe Platform**: Professional Responsive Web Portal (Desktop 1440px & Mobile Adaptable)
+- **Tri-Pillar Ekosistem**:
+  1. **Healthcare (Kesehatan)**: Skrining Tumbuh Kembang KPSP Kemenkes, KMS Digital WHO, Deteksi Dini Red Flags (Autisme, Speech Delay, Stunting), dan Rujukan Faskes.
+  2. **Education (Edukasi)**: Akademi Parenting Inklusif, Home-Therapy Playbook (stimulasi motorik & wicara), panduan stimulasi bermain harian, video edukasi ramah tunarungu.
+  3. **Economy (Ekonomi)**: *Smart Nutrition Budgeting* (kalkulator optimasi belanja gizi lokal murah), pencegahan kerugian finansial keluarga akibat disabilitas terlambat, serta integrasi voucher pangan bergizi UMKM desa (insentif posyandu).
+- **Nilai Inklusivitas**: 
+  - Dual-Layer Disabilitas (membantu anak disabilitas ABK + antarmuka WCAG 2.1 AAA ramah tunanetra, tunarungu, dan lansia).
+  - Menggantikan emoji dengan icon vector modern (Lucide SVG) dengan keterbacaan tinggi.
 
 ---
 
@@ -64,6 +65,7 @@
 - [x] Penguncian Ide Final: **KawanTumbuh** (Edu-Health Inklusif)
 - [x] Perumusan Problem Statement, Fitur Utama & Arsitektur
 - [x] Penyusunan Sitemap (Struktur Informasi)
-- [ ] Pembaruan Dokumen GitHub ([README.md](README.md), [design-system.md](design-system.md), [user-flow-wireframe.md](user-flow-wireframe.md), [naskah-laporan-2-halaman.md](naskah-laporan-2-halaman.md))
+- [x] Implementasi Fase 1: Desain Token & Prototype Responsif (`prototype/index.html`, `prototype/screening.html`, `prototype/design-tokens.html`)
+- [ ] Ekspor / Impor ke Kanvas Figma 5 Layar Utama
+- [ ] Finalisasi Naskah Proposal PDF 2 Halaman
 - [ ] Push Pembaruan ke Remote GitHub (`https://github.com/Rapyas-kece/UI-UX.git`)
-- [ ] Panduan Eksekusi Figma untuk 5 Layar Utama
